@@ -6,6 +6,7 @@ export const StyledDashboardPage = styled.div`
   flex-direction: column;
   align-items: flex-start;
   width: 98%;
+  margin-top: 30px
 `;
 
 export const StyledDashboardBody = styled.div`
@@ -17,3 +18,13 @@ export const StyledDashboardBody = styled.div`
   border-radius: 15px;
   box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
 `;
+
+export const StyledDashboardHeader = styled.div`  padding: 20px;
+margin: 15px;
+background-color: #ffffff;
+width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-radius: 15px;
+box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);`
