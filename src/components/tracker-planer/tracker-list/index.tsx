@@ -1,20 +1,27 @@
-import { List, Space } from "antd";
-import { StyledTrackerList } from "./styles";
+import { List, Space } from 'antd';
+import { StyledTrackerList } from './styles';
+import { ITransaction } from '@/models';
+import { useTransactions } from '@/providers';
+import { useEffect } from 'react';
 
-interface IProps {
-  transactions: [];
-}
+interface IProps {}
 
-const TrackerList: React.FC<IProps> = ({ transactions }) => {
+const TrackerList: React.FC<IProps> = ({}) => {
+  const { transactions, getTransactions } = useTransactions();
+
+  useEffect(() => {
+    getTransactions();
+  }, []);
+
   return (
     <StyledTrackerList>
       <List
-        dataSource={transactions}
+        dataSource={transactions || []}
         style={{
           height: 300,
-          overflow: 'auto'
+          overflow: 'auto',
         }}
-        renderItem={(item: any) => (
+        renderItem={(item: ITransaction) => (
           <List.Item>
             <Space size={60}>
               <span>{item.cardNumber}</span>
